@@ -1,0 +1,12 @@
+version: "3"
+services:
+  terraform:
+          build: .
+          volumes: 
+            - terraform-data:/terraform
+
+volumes:
+  terraform-data:
+     driver: local
+
+
