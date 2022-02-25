@@ -19,4 +19,8 @@ user!
 
 to run docker
 
+change the aws keys
+
+docker-compose build
+
 docker run -it  -v $(pwd)/terraform-data:/terraform nonbin/aws-ter-ansible:v0.2

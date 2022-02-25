@@ -1,9 +1,7 @@
 FROM ubuntu:20.04
 
-ARG TERRAFORM_VERSION="0.12.29"
+ARG TERRAFORM_VERSION="1.1.6"
 ENV TERRAFORM_VERSION=${TERRAFORM_VERSION}
-ENV AWS_ACCESS_KEY_ID=AKIATCOQ5JMXVZGN4A43
-ENV AWS_SECRET_ACCESS_KEY=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
 
 RUN apt-get update \
     && apt-get install -y wget curl python3 python3-pip python3-boto unzip  vim less \
@@ -15,6 +13,9 @@ RUN apt-get update \
     && python3 -m pip install ansible \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+ENV AWS_ACCESS_KEY_ID=AKIAQHJXAS5LCUKRQ5NC
+ENV AWS_SECRET_ACCESS_KEY=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
 
 RUN aws s3api create-bucket --bucket  terraform-user1231234512
 

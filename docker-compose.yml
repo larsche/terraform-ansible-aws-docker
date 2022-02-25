@@ -1,6 +1,7 @@
 version: "3"
 services:
   terraform:
+          image: nonbin/aws-ter-ansible
           build: .
           volumes: 
             - terraform-data:/terraform
